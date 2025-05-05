@@ -24,6 +24,7 @@
     <ProjectGuid>{cdfd6848-b4d1-4961-ba2e-96f04ed6aec2}</ProjectGuid>
     <RootNamespace>KursachFigures</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>project24VP1_var23</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -131,7 +132,7 @@
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="Figure.cpp" />
     <ClCompile Include="FiguresStack.cpp" />
-    <ClCompile Include="KursachFigures.cpp" />
+    <ClCompile Include="project24VP1_var23.cpp" />
     <ClCompile Include="Pentagon.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -2,8 +2,6 @@
 #include <stack>
 #include <vector>
 #include "Figure.h"
-#include <windows.h>
-#include <windowsx.h>
 
 class FiguresStack
 {
@@ -12,25 +10,10 @@ private:
 public:
 	FiguresStack() {}
 
-	void add(Figure* f) 
-	{ 
-		stackFigures.push(f);
-	}
+	void add(Figure* f);
 
-	void show() {
-		while (!stackFigures.empty()) {
-			stackFigures.top()->show();
-			cout << endl;
-			stackFigures.pop();
-		}
-		cout << endl;
-	}
+	void show();
 
-	~FiguresStack() {
-		while (!stackFigures.empty())
-		{
-			stackFigures.pop();
-		}
-	}
+	~FiguresStack();
 };
 
