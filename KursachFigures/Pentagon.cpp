@@ -12,12 +12,7 @@ void Pentagon::show()
 	SelectObject(hdc, brush);
 
 	POINT points[5];
-	for (int i{}; i < 5; i++)
-	{
-		double angle = 72.0 * i * 3.14159 / 180.0;
-		points[i].x = point.x + radius * cos(angle);
-		points[i].y = point.y + radius * sin(angle);
-	}
+	createPoints(points);
 	Polygon(hdc, points, 5);
 
 	DeleteObject(pen);
@@ -33,14 +28,19 @@ void Pentagon::hide()
 	SelectObject(hdc, brush);
 
 	POINT points[5];
+	createPoints(points);
+	Polygon(hdc, points, 5);
+
+	DeleteObject(pen);
+	DeleteObject(brush);
+}
+
+void Pentagon::createPoints(POINT points[])
+{
 	for (int i{}; i < 5; i++)
 	{
 		double angle = 72.0 * i * 3.14159 / 180.0;
 		points[i].x = point.x + radius * cos(angle);
 		points[i].y = point.y + radius * sin(angle);
 	}
-	Polygon(hdc, points, 5);
-
-	DeleteObject(pen);
-	DeleteObject(brush);
 }

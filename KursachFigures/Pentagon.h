@@ -9,5 +9,7 @@ public:
 	void show() override;
 
 	void hide() override;
+
+	void createPoints(POINT points[]);
 };
 
