@@ -27,7 +27,18 @@ public:
 
 	~Figure() { ReleaseDC(hwnd, hdc); }
 
-	class BorderException {};
+	class FigureException : public exception
+	{
+		string message;
+
+	public:
+		enum ErrorType {NEGATIVE_INPUT, OUT_OF_BOUNDS};
+
+		FigureException(ErrorType type, int x, int y, int radius);
+
+		const char* what() const noexcept override;
+	};
+
 protected:
 	Point point;
 	int radius;

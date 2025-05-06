@@ -6,6 +6,7 @@ using namespace std;
 
 void Pentagon::show()
 {
+	Figure::show();
 	HPEN pen = CreatePen(PS_SOLID, 2, RGB(0, 0, 0));
 	HBRUSH brush = CreateSolidBrush(color);
 	SelectObject(hdc, pen);
