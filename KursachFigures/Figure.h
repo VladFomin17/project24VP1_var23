@@ -15,7 +15,7 @@ class Figure
 public:
 	Figure();
 
-	Figure(int _x, int _y, int _radius, COLORREF _color);
+	Figure(int _x, int _y, int _radius, COLORREF _colorBrush, COLORREF _colorPen);
 
 	virtual void show();
 
@@ -45,6 +45,7 @@ protected:
 	HWND hwnd;
 	HDC hdc;
 	RECT rt; 
-	COLORREF color;
+	COLORREF colorBrush;
+	COLORREF colorPen;
 };
 

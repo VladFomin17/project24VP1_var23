@@ -16,18 +16,16 @@ int main()
     try {
         COLORREF circleColor = RGB(128, 0, 128);
         COLORREF pentagonColor = RGB(128, 0, 0);
+        COLORREF penColor = RGB(0, 0, 0);
 
-        Circle* circle = new Circle(100, 280, 75, circleColor);
-        Pentagon* pentagon = new Pentagon(100, 280, 75, pentagonColor);
+        Circle* circle = new Circle(100, 280, 75, circleColor, penColor);
+        Pentagon* pentagon = new Pentagon(100, 280, 75, pentagonColor, penColor);
         ComplexFigure* complex = new ComplexFigure(circle, pentagon);
 
-        Circle* circle1 = new Circle(300, 300, 100, circleColor);
-        Pentagon* pentagon1 = new Pentagon(600, 200, 50, pentagonColor);
+        Circle* circle1 = new Circle(300, 300, 100, circleColor, penColor);
+        Pentagon* pentagon1 = new Pentagon(600, 200, 50, pentagonColor, penColor);
 
         FiguresStack stack{complex, circle1, pentagon1};
-        /*stack.add(complex);
-        stack.add(circle1);
-        stack.add(pentagon1);*/
         stack.show();
         Sleep(3000);
 
@@ -38,7 +36,7 @@ int main()
 
         stack.hide();
 
-        Circle* bigCircle = new Circle(-50, 50, 100, circleColor);
+        Circle* bigCircle = new Circle(-50, 50, 100, circleColor, penColor);
         bigCircle->show();
         Sleep(3000);
     }

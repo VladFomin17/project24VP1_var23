@@ -5,13 +5,16 @@
 #include "Figure.h"
 using namespace std;
 
-Figure::Figure() : radius(0), color(RGB(240, 240, 240))
+Figure::Figure() : radius(0), colorBrush(RGB(240, 240, 240)), colorPen(RGB(240, 240, 240))
 {
 	point.x = 0;
 	point.y = 0;
+	hwnd = GetConsoleWindow();
+	hdc = GetDC(hwnd);
+	GetClientRect(hwnd, &rt);
 }
 
-Figure::Figure(int _x, int _y, int _radius, COLORREF _color) : Figure()
+Figure::Figure(int _x, int _y, int _radius, COLORREF _colorBrush, COLORREF _colorPen) : Figure()
 {
 	if (_x < 0 || _y < 0 || _radius < 0) { throw FigureException(FigureException::NEGATIVE_INPUT, _x, _y, _radius); }
 
@@ -21,7 +24,8 @@ Figure::Figure(int _x, int _y, int _radius, COLORREF _color) : Figure()
 	hwnd = GetConsoleWindow();
 	hdc = GetDC(hwnd);
 	GetClientRect(hwnd, &rt);
-	color = _color;
+	colorBrush = _colorBrush;
+	colorPen = _colorPen;
 }
 
 void Figure::show()

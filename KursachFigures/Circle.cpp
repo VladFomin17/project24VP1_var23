@@ -6,8 +6,8 @@ using namespace std;
 void Circle::show()
 {
 	Figure::show();
-	HPEN pen = CreatePen(PS_SOLID, 2, RGB(0, 0, 0));
-	HBRUSH brush = CreateSolidBrush(color);
+	HPEN pen = CreatePen(PS_SOLID, 2, colorPen);
+	HBRUSH brush = CreateSolidBrush(colorBrush);
 	SelectObject(hdc, pen);
 	SelectObject(hdc, brush);
 	Ellipse(hdc, point.x - radius, point.y - radius, point.x + radius, point.y + radius);

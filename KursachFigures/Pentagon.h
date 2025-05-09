@@ -4,7 +4,7 @@
 class Pentagon : public Figure
 {
 public:
-	Pentagon(int _x, int _y, int _radius, COLORREF _color) : Figure(_x, _y, _radius, _color) {}
+	Pentagon(int _x, int _y, int _radius, COLORREF _brush, COLORREF _pen) : Figure(_x, _y, _radius, _brush, _pen) {}
 
 	void show() override;
 
