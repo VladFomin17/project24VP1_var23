@@ -10,15 +10,30 @@ void FiguresStack::add(Figure* f)
 
 void FiguresStack::show()
 {
-	while (!stackFigures.empty()) {
-		stackFigures.top()->show();
+	stack <Figure*, vector<Figure*>> tempStack = stackFigures;
+
+	while (!tempStack.empty()) {
+		tempStack.top()->show();
 		cout << endl;
-		stackFigures.pop();
+		Sleep(500);
+		tempStack.pop();
 	}
 	cout << endl;
 }
 
-FiguresStack::~FiguresStack()
+void FiguresStack::hide()
+{
+	stack <Figure*, vector<Figure*>> tempStack = stackFigures;
+
+	while (!tempStack.empty()) {
+		tempStack.top()->hide();
+		cout << endl;
+		tempStack.pop();
+	}
+	cout << endl;
+}
+
+void FiguresStack::clear()
 {
 	while (!stackFigures.empty())
 	{

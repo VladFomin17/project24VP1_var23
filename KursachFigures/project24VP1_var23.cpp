@@ -24,10 +24,10 @@ int main()
         Circle* circle1 = new Circle(300, 300, 100, circleColor);
         Pentagon* pentagon1 = new Pentagon(600, 200, 50, pentagonColor);
 
-        FiguresStack stack;
-        stack.add(complex);
+        FiguresStack stack{complex, circle1, pentagon1};
+        /*stack.add(complex);
         stack.add(circle1);
-        stack.add(pentagon1);
+        stack.add(pentagon1);*/
         stack.show();
         Sleep(3000);
 
@@ -36,9 +36,7 @@ int main()
         circle1->move(150, 250);
         Sleep(3000);
 
-        complex->hide();
-        circle1->hide();
-        pentagon1->hide();
+        stack.hide();
 
         Circle* bigCircle = new Circle(-50, 50, 100, circleColor);
         bigCircle->show();

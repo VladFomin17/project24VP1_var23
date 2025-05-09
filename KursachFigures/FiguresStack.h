@@ -1,6 +1,7 @@
 #pragma once
 #include <stack>
 #include <vector>
+#include <initializer_list>
 #include "Figure.h"
 
 class FiguresStack
@@ -10,10 +11,20 @@ private:
 public:
 	FiguresStack() {}
 
+	FiguresStack(initializer_list <Figure*> list)
+	{
+		for (auto figure : list)
+		{
+			stackFigures.push(figure);
+		}
+	}
+
 	void add(Figure* f);
 
 	void show();
 
-	~FiguresStack();
+	void hide();
+
+	void clear();
 };
 
