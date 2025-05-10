@@ -25,6 +25,10 @@ public:
 
 	virtual void move(int x, int y);
 
+	Point getPoint() { return point; }
+
+	int getRadius() { return radius; }
+
 	~Figure() { ReleaseDC(hwnd, hdc); }
 
 	class FigureException : public exception
@@ -35,6 +39,8 @@ public:
 		enum ErrorType {NEGATIVE_INPUT, OUT_OF_BOUNDS};
 
 		FigureException(ErrorType type, int x, int y, int radius);
+
+		FigureException(string _message) : message(_message) {}
 
 		const char* what() const noexcept override;
 	};

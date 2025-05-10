@@ -8,7 +8,7 @@ private:
 	Circle* circle;
 	Pentagon* pentagon;
 public:
-	ComplexFigure(Circle* _circle, Pentagon* _pentagon) : circle(_circle), pentagon(_pentagon) {}
+	ComplexFigure(Circle* _circle, Pentagon* _pentagon);
 
 	void show() override;
 
