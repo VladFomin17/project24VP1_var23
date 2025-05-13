@@ -1,5 +1,4 @@
 #include <windows.h>
-#include <windowsx.h>
 #include <string>
 #include "ComplexFigure.h"
 using namespace std;
@@ -12,7 +11,7 @@ ComplexFigure::ComplexFigure(Circle* _circle, Pentagon* _pentagon) : circle(_cir
 	{
 		string message = "Поля фигур не совпадают. Окружность с центром (" + to_string(_circle->getPoint().x) + 
 			"; " + to_string(_circle->getPoint().y) + ") и радиусом " + to_string(_circle->getRadius()) + 
-			". Окружность с центром (" + to_string(_pentagon->getPoint().x) + "; " + to_string(_pentagon->getPoint().y) +
+			". Пятиугольник с центром (" + to_string(_pentagon->getPoint().x) + "; " + to_string(_pentagon->getPoint().y) +
 			") и радиусом " + to_string(_pentagon->getRadius());
 		throw FigureException(message);
 	}

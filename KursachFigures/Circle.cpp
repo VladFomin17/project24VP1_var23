@@ -1,5 +1,4 @@
 #include <windows.h>
-#include <windowsx.h>
 #include "Circle.h"
 using namespace std;
 

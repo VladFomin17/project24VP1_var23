@@ -1,12 +1,12 @@
 #pragma once
 #include <iostream>
 #include <windows.h>
-#include <windowsx.h>
+//#include <windowsx.h>
 using namespace std;
 
 struct Point
 {
-	int x;
+	int x;	
 	int y;
 };
 

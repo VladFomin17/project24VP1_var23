@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <windows.h>
-#include <windowsx.h>
 #include "Figure.h"
 using namespace std;
 
@@ -51,6 +50,7 @@ void Figure::move(int x, int y)
 	hide();
 	point.x = x;
 	point.y = y;
+	if (x < 0 || y < 0) { throw FigureException(FigureException::NEGATIVE_INPUT, x, y, radius); }
 	show();
 }
 
